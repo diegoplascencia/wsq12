@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+int primero, segundo, divisor,div;
+int gcd(int x, int y){
+	if (x==y){
+		div=x;
+	}
+	if (x>y){
+		gcd(x-y,y);
+	}
+	if(x<y){
+		gcd(x,y-x);
+	}
+	return div;
+}
+
+int main (){
+	cout<<"INTRODUZCA EL PRIMER NUMERO POSITIVO Y ENTERO"<< endl;
+	cin>> primero;
+	cout<<"INTRODUZCA EL SEGUNDO NUMERO POSITIVO Y ENTERO"<<endl;
+	cin>> segundo;
+	divisor= gcd(primero,segundo);
+	cout<<"EL MAXIMO COMUN DIVISOR DE: "<< primero<< " y "<< segundo<< " es "<< divisor<< endl;
+}
